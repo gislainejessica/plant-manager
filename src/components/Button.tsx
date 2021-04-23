@@ -1,6 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Image, TouchableOpacity, TouchableOpacityProps } from 'react-native';
-import colors from '../styles/colors';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native'
+
+import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string
@@ -12,7 +14,7 @@ export function Button({ title }: ButtonProps) {
       style={styles.button}
       activeOpacity={0.7}>
       <Text style={styles.textButton}>
-        {title}
+        Confirmar
       </Text>
     </TouchableOpacity>
   );
@@ -24,12 +26,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 16,
-    marginBottom: 10,
-    width: 56,
+    // marginBottom: 10,
+    // width: 56,
     height: 56
   },
   textButton: {
     color: colors.white,
-    fontSize: 24,
+    fontSize: 16,
+    fontFamily: fonts.heading,
   },
 });
