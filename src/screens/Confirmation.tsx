@@ -31,7 +31,10 @@ export function Confirmation() {
         </Text>
 
         <View style={styles.footer}>
-          <Button title="" />
+          <Button
+            title="Começar"
+            onPress={() => { }}
+          />
         </View>
 
       </View>
