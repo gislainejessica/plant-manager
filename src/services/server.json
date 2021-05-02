@@ -102,6 +102,51 @@
         "times": 2,
         "repeat_every": "week"
       }
+    },
+    {
+      "id": 6,
+      "name": "Tulipa",
+      "about": "É uma espécie tropical que tem crescimento rápido e fácil...",
+      "water_tips": "Mantenha sempre umida sem encharcar",
+      "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/5.svg",
+      "environments": [
+        "living_room",
+        "kitchen"
+      ],
+      "frenquency": {
+        "times": 2,
+        "repeat_every": "week"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Tulipa",
+      "about": "É uma espécie tropical que tem crescimento rápido e fácil...",
+      "water_tips": "Mantenha sempre umida sem encharcar",
+      "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/5.svg",
+      "environments": [
+        "living_room",
+        "kitchen"
+      ],
+      "frenquency": {
+        "times": 2,
+        "repeat_every": "week"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Tulipa",
+      "about": "É uma espécie tropical que tem crescimento rápido e fácil...",
+      "water_tips": "Mantenha sempre umida sem encharcar",
+      "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/5.svg",
+      "environments": [
+        "living_room",
+        "kitchen"
+      ],
+      "frenquency": {
+        "times": 2,
+        "repeat_every": "week"
+      }
     }
   ]
 }
