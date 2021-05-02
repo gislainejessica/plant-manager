@@ -7,23 +7,53 @@ import { EnviromentButton } from '../components/EnviromentButton'
 import fonts from '../styles/fonts'
 import api from '../services/api'
 
+import { PlantCardPrimary } from '../components/PlantCardPrimary'
+
 interface EnviromentProps {
   key: string,
   title: string
 }
 
+interface PlantProps {
+  id: string,
+  name: string,
+  about: string,
+  water_tips: string,
+  photo: string,
+  environments: [string],
+  frenquency: {
+    times: number,
+    repeat_every: string,
+  }
+}
+
 export function PlantSelect() {
-  const [environments, setEnviroments] = useState<EnviromentProps[]>()
+  const [environments, setEnviroments] = useState<EnviromentProps[]>([])
+  const [plants, setPlants] = useState<PlantProps[]>([])
 
   useEffect(() => {
     async function fetchEnviroment() {
       const { data } = await api.get(`plants_environments`)
-      setEnviroments(data)
-      console.log("data")
-
-      console.log(data)
+      setEnviroments([
+        {
+          key: 'all',
+          title: 'Todos'
+        },
+        ...data
+      ])
     }
+
     fetchEnviroment()
+  }, [])
+
+
+  useEffect(() => {
+    async function fetchPlants() {
+      const { data } = await api.get(`plants`)
+      setPlants(data)
+    }
+
+    fetchPlants()
   }, [])
 
   return (
@@ -40,7 +70,7 @@ export function PlantSelect() {
               <EnviromentButton
                 key={item.key}
                 title={item.title}
-                active
+              // active
               />
             )}
             horizontal
@@ -49,6 +79,16 @@ export function PlantSelect() {
           />
         </View>
 
+        <View style={styles.plants}>
+          <FlatList
+            data={plants}
+            renderItem={({ item }) => (
+              <PlantCardPrimary data={item} />
+            )}
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+          />
+        </View>
       </View>
     </View>
   )
@@ -81,5 +121,8 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     // marginLeft: 32,
     marginVertical: 32,
+  },
+  plants: {
+
   }
 })
