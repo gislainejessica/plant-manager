@@ -38,7 +38,8 @@ export function PlantSelect() {
             data={environments}
             renderItem={({ item }) => (
               <EnviromentButton
-                title='cosinha'
+                key={item.key}
+                title={item.title}
                 active
               />
             )}
